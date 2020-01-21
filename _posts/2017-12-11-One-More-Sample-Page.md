@@ -1,6 +1,7 @@
 ---
 title: One More Sample Page
 published: true
+Categories: Sans Challenge
 ---
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
