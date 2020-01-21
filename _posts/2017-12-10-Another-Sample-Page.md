@@ -1,7 +1,7 @@
 ---
 title: Another Sample Page
 published: true
-Categories: HackTheBox
+categories: HackTheBox
 ---
 
 Text can be **bold**, _italic_, ~~strikethrough~~ or `keyword`.
