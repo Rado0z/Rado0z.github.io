@@ -22,9 +22,9 @@ Answer: C:\Users\cbanas\Documents\Naughty_and_Nice_2019_draft.txt
 
 as Alice says (on of the SOC team) using Microsoft sysmon as source type in splunk search to find C2 server by.
 
-'''
+```
 index=main sourcetype=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
-'''
+```
 
 ![](https://raw.githubusercontent.com/Rado0z/Rado0z.github.io/master/assets/Splunk_2.PNG)
 
@@ -35,9 +35,9 @@ Answer: 144.202.46.214.vultr.com
 this very intersted part and here is the steps to solve it:
 1. using powershell souce type and reverse the result from the oldest Event
 
-'''
-> sourcetype="WinEventLog:Microsoft-Windows-Powershell/Operational" | reverse
-'''
+```
+sourcetype="WinEventLog:Microsoft-Windows-Powershell/Operational" | reverse
+```
 
 1. find two intersted process id and conver it them to hex
 
@@ -79,9 +79,9 @@ here is the steps to find the message for kent:
 
 1. get the core.xml file path
 
-'''
+```
 /home/ubuntu/archive/f/f/1/e/a/ff1ea6f13be3faabd0da728f514deb7fe3577cc4/core.xml
-'''
+```
 
 1. go to StoQ Archive which stores the raw artifacts in their entirety in the archive and get the file and open it in chrome borwser.
 
