@@ -14,7 +14,7 @@ Answer: sweetums.
 
 In this challenge I used Bana’s hostname in splunk search to identify sensitive file that was likely accessed and copied by the attacker. And from the hint from SOC team. He said that he very close from (Santa). So in search we used his name and santa and I found the file.
 
-![](https://github.com/Rado0z/Rado0z.github.io/blob/master/assets/Splunk_1.PNG)
+![](https://raw.githubusercontent.com/Rado0z/Rado0z.github.io/master/assets/Splunk_1.PNG)
 
 Answer: C:\Users\cbanas\Documents\Naughty_and_Nice_2019_draft.txt
 
