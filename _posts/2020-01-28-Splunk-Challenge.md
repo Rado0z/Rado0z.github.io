@@ -4,6 +4,7 @@ published: true
 categories: Sans-Challenge
 ---
 
+
 ### [](#header-3)1- What is the short host name of Professor Banas' computer?
 
 We can know the host name of Professor Banas’s computer from the Soc team Chat. 
