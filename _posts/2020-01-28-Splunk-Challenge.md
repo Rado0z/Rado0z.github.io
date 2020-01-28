@@ -24,7 +24,7 @@ as Alice says (on of the SOC team) using Microsoft sysmon as source type in splu
 
 > index=main sourcetype=XmlWinEventLog:Microsoft-Windows-Sysmon/Operational
 
-![](https://github.com/Rado0z/Rado0z.github.io/blob/master/assets/Splunk_2.PNG)
+![](https://raw.githubusercontent.com/Rado0z/Rado0z.github.io/master/assets/Splunk_2.PNG)
 
 Answer: 144.202.46.214.vultr.com
 
@@ -34,9 +34,9 @@ this very intersted part and here is the steps to solve it:
 1. using powershell souce type and reverse the result from the oldest Event
 > sourcetype="WinEventLog:Microsoft-Windows-Powershell/Operational" | reverse
 1. find two intersted process id and conver it them to hex
-![](https://github.com/Rado0z/Rado0z.github.io/blob/master/assets/Splunk_3_1.PNG)
+![](https://raw.githubusercontent.com/Rado0z/Rado0z.github.io/master/assets/Splunk_3_1.PNG)
 1. using sourcetype=WinEventLog EventCode=4688 to uncover what launched those processes and then using process id that had been converted to hex.
-![](https://github.com/Rado0z/Rado0z.github.io/blob/master/assets/Splunk_3_2.PNG)
+![](https://raw.githubusercontent.com/Rado0z/Rado0z.github.io/master/assets/Splunk_3_2.PNG)
 
 Answer: 19th Century Holiday Cheer Assignment.docm
 
@@ -49,7 +49,7 @@ Answer: 21
 ** 6- What was the password for the zip archive that contained the suspicious file?**
 
 while to looking to unique email which is spam email bradly.buttercups@eifu.org that used to hack carl.banas@faculty.elfu.org.
-![](https://github.com/Rado0z/Rado0z.github.io/blob/master/assets/Splunk_4.PNG)
+![](https://raw.githubusercontent.com/Rado0z/Rado0z.github.io/master/assets/Splunk_4.PNG)
 
 Answer: 123456789
 
@@ -64,12 +64,12 @@ Answer: bradly.buttercups@eifu.org
 
 here is the steps to find the message for kent:
 1. we should look on all file path that come from the attacker which is bradly.buttercups@eifu.org
-![](https://github.com/Rado0z/Rado0z.github.io/blob/master/assets/Splunk_5.PNG)
+![](https://raw.githubusercontent.com/Rado0z/Rado0z.github.io/master/assets/Splunk_5.PNG)
 1. get the core.xml file path
 > /home/ubuntu/archive/f/f/1/e/a/ff1ea6f13be3faabd0da728f514deb7fe3577cc4/core.xml
 1. go to StoQ Archive which stores the raw artifacts in their entirety in the archive and get the file and open it in chrome borwser.
-![](https://github.com/Rado0z/Rado0z.github.io/blob/master/assets/Splunk_6.PNG)
+![](https://raw.githubusercontent.com/Rado0z/Rado0z.github.io/master/assets/Splunk_6.PNG)
 
 and this was the last amazing Challenge
-![](https://github.com/Rado0z/Rado0z.github.io/blob/master/assets/Splunk_7.PNG)
+![](https://raw.githubusercontent.com/Rado0z/Rado0z.github.io/master/assets/Splunk_7.PNG)
 
