@@ -103,13 +103,14 @@ and here is the result
 ```
 these numbers is always changed so it's really hard to predict.
 
-and then i looked and i found this function `random.seed(os.getpid())`. after doing some research, i found that if we put for example `random.seed(1)` before the the generation function, will give us the same result in every time. so if we know what the proccess id that got excute in web servier, then we will the combiantion numbers. it's great but there is no way to get the pid while we don't have any shell or rce vulnerablity.
+and then i found this function `random.seed(os.getpid())`. after doing some research, i found that if we put for example `random.seed(1)` before the the generation function, will give us the same result in every time. so if we know what the proccess id that got excute in web server, then we will the combiantion numbers. it's great but there is no way to get the pid while we don't have any shell or rce vulnerablity.
 
 
 ### [](#header-3)4- the winnig.
 
 as i understand that the maxiumun process id that can ubuntu os create is 32768. so one of them is right one for the combination. and here is the steps to solve this part:
-1. get the first win number from the webapplication
+
+1. get the first win number from the web application
 2. write a python script and compare it with first number
 
 ```python
@@ -117,7 +118,7 @@ as i understand that the maxiumun process id that can ubuntu os create is 32768.
 import random, os, sys
 
 def generate_combination():
-  for i in range(1,30000):
+  for i in range(1,32768):
     random.seed(i)
     combination = []
     for i in range(3):
@@ -138,7 +139,7 @@ generate_combination()
 
 ```
 
-and after i run it got the reslut
+and after i run it got the result
 
 ```
 ['22-90-10-28-89-59-35-10-06-92', '21-57-14-02-01-10-83-75-31-35', '87-64-43-17-88-19-02-95-92-90']
