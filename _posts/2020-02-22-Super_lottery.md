@@ -6,35 +6,35 @@ categories: Ringzer0CTF
 
 
 ### [](#header-2)Inroduction
-supper lottery is one web challenge from rinzer0ctf platform which is really really fun challenge.
+supper lottery is one of web challenge from rinzer0ctf platform which is really really fun challenge.
 
 ### [](#header-3)1- understanding the web application
 
 ![](https://raw.githubusercontent.com/Rado0z/Rado0z.github.io/master/assets/rinzer-1.png)
 
-there is combination of nubmers we should right predicted to win the prize. so the first i used the burpsuite to get the idea how this web application works.
+there is combination of nubmers we should predicte the right combination numbers to win the prize. so first i used the burpsuite to get the idea how this web application works.
 
 ![](https://raw.githubusercontent.com/Rado0z/Rado0z.github.io/master/assets/ring-burp.png)
 
-the first thing comes to my idea is to try to fuzz the combination parameter but it seems bad idea because this application seems only take this combination and compare with the right one.
+the first thing comes to my mind is to try to fuzz the combination parameter but it seems bad idea because this parameter seems only take this combination and compare with the right one.
 
-so i moved to next step which looking for web directories.
+so i moved to next step which is looking for web directories.
 
 ### [](#header-3)2- Content Discovery / Directory Bruting
 
-as always when we try to make content discovery, the first thing we do is check the robots.txt
+as always when we try to make content discovery, the first thing we do is to check the robots.txt
 
 ![](https://raw.githubusercontent.com/Rado0z/Rado0z.github.io/master/assets/robots_rinzer0.png)
 
-and i found model and when i check it i found python script which is give us the idea how this the web application works.
+and i found model folder and when i check it i found python script which is give us the idea how this the web application works.
 
 ![](https://raw.githubusercontent.com/Rado0z/Rado0z.github.io/master/assets/lottery_code.png)
 
-so the next step is to understand how this code work and find the way to get the combination numbers
+so the next step is to understand how this code works and find the way to get the combination numbers
 
 ### [](#header-3)3- Cracking the way :)
 
-so lets take a look about how this code work:
+so lets take a look about how this code works:
 
 ```python
 
@@ -67,14 +67,12 @@ if __name__ == '__main__':
 
 ```
 
-first, from the main function, it seems the php script ( which is web application langauge is used ) create a sessionid and give to python script and create three combination numbers in put them in arrary. and save it in file inside `/tmp` folder. the good thing is this code create thee numbers. so if we know the first one that mean we can get the second and win the prize. so we understand the goal and we are in two option to reach this goal which is:
+first, from the main function, it seems the php script ( which is web application langauge is used ) create a sessionid and give to python script and create three combination numbers in put them in arrary. and save it in file inside `/tmp` folder. the good thing is this code create a three of combination numbers. so if we know the first one that mean we can get the second and win the prize. so we understand the goal and we are in two option to reach this goal which is:
 1. to prediect the numbers from the first combination.
 2. get the file but we should find LFI vulnerability to get /tmp folder. and at first i feel this option is good because the we have the sessionid and it's easy to get the file.
 
-after deep looking i could not get and find any parameters got lead the to LFI
-
-so backing to option and deep understanding how this script works.
-
+after deep looking i could not get and find any parameters got lead the to LFI.
+so backing to option 1 i will and deep understanding how this script works.
 so first i edit this script to understand how these number is generated
 
 ```python
